@@ -2,6 +2,7 @@
 # class Square that defines a square by: (based on 1-square.py)
 """Define a class Square."""
 
+
 class Square:
     """Represent a square."""
 
