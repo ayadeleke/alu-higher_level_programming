@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#class Rectangle that defines a rectangle by: (based on 1-rectangle.py)
+# Class Rectangle that defines a rectangle by: (based on 1-rectangle.py)
 """
 Module 2-rectangle
 Contains class Rectangle with private attribute width and height,
