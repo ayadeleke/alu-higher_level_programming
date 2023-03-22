@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """function that returns True if the object of  specified class"""
 
 
