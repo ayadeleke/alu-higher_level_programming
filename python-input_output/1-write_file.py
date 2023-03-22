@@ -5,10 +5,15 @@ Module 1-number_of_lines
 Contains function that returns number of lines in text"""
 
 
-def number_of_lines(filename=""):
-    """Return the number of lines in a text file."""
-    lines = 0
-    with open(filename) as f:
-        for line in f:
-            lines += 1
-    return lines
+def write_file(filename="", text=""):
+    """
+    Function that writes to a text file.
+    Args:
+        filename: filename
+        text: text to write
+    Raises:
+        Exception: when the file can be opened
+    """
+
+    with open(filename, "w", encoding="utf-8") as f:
+        return f.write(text)
