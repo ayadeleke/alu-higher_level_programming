@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 """
 This module initializes a database table named `states` by linking a corresponding SQLAlchemy model class to the database.
