@@ -3,6 +3,7 @@
 """
 import os
 import unittest
+import tkinter
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
