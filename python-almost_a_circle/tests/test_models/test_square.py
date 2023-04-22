@@ -1,4 +1,6 @@
-#!/usr/bin/python3>
+#!/usr/bin/python3
+# test_square.py
+# Brennan D Baraban <375@holbertonschool.com>
 """Defines unittests for models/square.py.
 Unittest classes:
     TestSquare_instantiation - line 24
@@ -445,6 +447,11 @@ class TestSquare_update_args(unittest.TestCase):
     def test_update_args_four(self):
         s = Square(10, 10, 10, 10)
         s.update(89, 2, 3, 4)
+        self.assertEqual("[Square] (89) 3/4 - 2", str(s))
+
+    def test_update_args_more_than_four(self):
+        s = Square(10, 10, 10, 10)
+        s.update(89, 2, 3, 4, 5)
         self.assertEqual("[Square] (89) 3/4 - 2", str(s))
 
     def test_update_args_width_setter(self):
