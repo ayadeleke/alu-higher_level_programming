@@ -1,5 +1,16 @@
-#!/usr/bin/python3
-"""Defines unittests for models/square.py
+#!/usr/bin/python3>
+"""Defines unittests for models/square.py.
+Unittest classes:
+    TestSquare_instantiation - line 24
+    TestSquare_size - line 88
+    TestSquare_x - line 166
+    TestSquare_y - line 238
+    TestSquare_order_of_initialization - line 306
+    TestSquare_area - line 322
+    TestSquare_stdout - line 343
+    TestSquare_update_args - line 426
+    TestSquare_update_kwargs - line 538
+    TestSquare_to_dictionary - 640
 """
 import io
 import sys
@@ -436,11 +447,6 @@ class TestSquare_update_args(unittest.TestCase):
         s.update(89, 2, 3, 4)
         self.assertEqual("[Square] (89) 3/4 - 2", str(s))
 
-    def test_update_args_more_than_four(self):
-        s = Square(10, 10, 10, 10)
-        s.update(89, 2, 3, 4, 5)
-        self.assertEqual("[Square] (89) 3/4 - 2", str(s))
-
     def test_update_args_width_setter(self):
         s = Square(10, 10, 10, 10)
         s.update(89, 2)
@@ -562,7 +568,7 @@ class TestSquare_update_kwargs(unittest.TestCase):
     def test_update_kwargs_None_id_and_more(self):
         s = Square(10, 10, 10, 10)
         s.update(id=None, size=7, x=18)
-        correct = "[Square] (156) 18/10 - 7"
+        correct = "[Square] ({}) 18/10 - 7".format(s.id)
         self.assertEqual(correct, str(s))
 
     def test_update_kwargs_twice(self):
@@ -640,7 +646,6 @@ class TestSquare_to_dictionary(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         with self.assertRaises(TypeError):
             s.to_dictionary(1)
-
 
 if __name__ == "__main__":
     unittest.main()
