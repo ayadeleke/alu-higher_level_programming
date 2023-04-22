@@ -1,4 +1,6 @@
-#!/usr/bin/python3>
+
+#!/usr/bin/python3
+
 """Defines unittests for models/square.py.
 Unittest classes:
     TestSquare_instantiation - line 24
@@ -312,7 +314,7 @@ class TestSquare_order_of_initialization(unittest.TestCase):
             Square("invalid size", 1, "invalid y")
 
     def test_x_before_y(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+[O        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, "invalid x", "invalid y")
 
 
@@ -445,6 +447,11 @@ class TestSquare_update_args(unittest.TestCase):
     def test_update_args_four(self):
         s = Square(10, 10, 10, 10)
         s.update(89, 2, 3, 4)
+        self.assertEqual("[Square] (89) 3/4 - 2", str(s))
+
+    def test_update_args_more_than_four(self):
+        s = Square(10, 10, 10, 10)
+        s.update(89, 2, 3, 4, 5)
         self.assertEqual("[Square] (89) 3/4 - 2", str(s))
 
     def test_update_args_width_setter(self):
