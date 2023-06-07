@@ -1,10 +1,12 @@
 #!/usr/bin/node
-const args = process.argv;
-const conA = Number(args[2]);
-const conB = Number(args[3]);
+
+const args = process.argv.slice(2);
+
+const numb1 = parseInt(args[0]);
+const numb2 = parseInt(args[1]);
 
 function add (a, b) {
-  console.log(a + b);
+	console.log(a + b);
 }
 
-add(args[2], args[3]);
+add(numb1, numb2);
