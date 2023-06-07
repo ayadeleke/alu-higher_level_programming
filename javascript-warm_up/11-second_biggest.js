@@ -1,20 +1,20 @@
-#!/usr/bin/node
-const args = process.argv;
-const numA = Number(args[2]);
-const numB = Number(args[3]);
-let firstBig = numA;
-let secondBig = numB;
-if (args.length <= 3) {
+const args = process.argv.slice(2).map(Number);
+
+if (args.length <= 1) {
   console.log(0);
 } else {
-  for (let a = 3; a < args.length; a++) {
-    if (Number(args[a]) > firstBig) {
-      secondBig = firstBig;
-      firstBig = Number(args[a]);
-    }
-    if (Number(args[a]) > firstBig && Number(args[a]) < firstBig) {
-      secondBig = Number(args[a]);
+  let firstBig = Math.max(...args);
+  let secondBig = -Infinity;
+
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] < firstBig && args[i] > secondBig) {
+      secondBig = args[i];
     }
   }
-  console.log(secondBig);
+
+  if (secondBig === -Infinity) {
+    console.log(0);
+  } else {
+    console.log(secondBig);
+  }
 }
