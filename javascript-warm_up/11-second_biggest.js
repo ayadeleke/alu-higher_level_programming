@@ -3,7 +3,7 @@ const args = process.argv;
 const numA = Number(args[2]);
 const numB = Number(args[3]);
 let firstBig = numA;
-letsecondBig = numB;
+let secondBig = numB;
 if (args.length <= 3) {
   console.log(0);
 } else {
