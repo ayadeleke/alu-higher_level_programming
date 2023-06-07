@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const arg = process.argv;
+const arg = process;
 
 const argNum  = Number(arg[2]);
 
