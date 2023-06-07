@@ -1,7 +1,6 @@
 #!/usr/bin/node
 
 const arg = process.argv;
-
 const argNum = Number(arg[2]);
 if (argNum) {
   for (let a = 0; a < argNum; a++) {
