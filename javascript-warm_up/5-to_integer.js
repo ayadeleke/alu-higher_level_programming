@@ -1,11 +1,10 @@
 #!/usr/bin/node
 
-const arg = process;
+const { argv } = process;
 
-const argNum  = Number(arg[2]);
+const numArg = Number(argv[2]);
 
-if (argNum) {
-  console.log('My number': arg[2]);
-} else {
-  console.log('Not a number');
+if (!numArg) console.log('Not a number');
+else {
+  console.log('My number:', numArg);
 }
