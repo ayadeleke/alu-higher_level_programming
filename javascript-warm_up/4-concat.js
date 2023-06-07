@@ -2,4 +2,4 @@
 
 const { arg } = process;
 
-console.log(arg[2], 'is', arg[3]);
+console.log(`${arg[2]} is  ${arg[3]}`);
