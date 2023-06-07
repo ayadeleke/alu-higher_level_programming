@@ -1,19 +1,20 @@
 #!/usr/bin/node
 
-function factorial(num) {
-  if (num === 0 || num === 1) {
+const args = process.argv;
+const numA = Number(args[2]);
+
+function factorial (n) {
+  if (n === 0) {
     return 1;
-  } else {
-    return num * factorial(num - 1);
   }
+  if (n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
 }
 
-const args = process.argv;
-const fact = parseInt(args[2]);
-
-if (isNaN(fact) === true) {
-  console.log(1);
+if (numA) {
+  console.log(factorial(numA));
 } else {
-  const result = factorial(fact);
-  console.log(result);
+  console.log(1);
 }
