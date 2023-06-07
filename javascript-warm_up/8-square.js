@@ -1,5 +1,6 @@
 #!/usr/bin/node
 
+let output;
 const arg = process.argv;
 const argNum = Number(arg[2]);
 if (argNum) {
