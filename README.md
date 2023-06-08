@@ -1,2 +1,1 @@
-alu-higher_level_programming
-Python - Hello, World scripts
+My ALU Project tasks and scripts
