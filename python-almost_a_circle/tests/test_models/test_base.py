@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-
+# test_base.py
+# refer to models
 """Defines unittests for base.py.
+
 Unittest classes:
     TestBase_instantiation - line 23
     TestBase_to_json_string - line 110
@@ -249,7 +251,7 @@ class TestBase_from_json_string(unittest.TestCase):
             {"id": 89, "width": 10, "height": 4, "x": 7, "y": 8},
             {"id": 98, "width": 5, "height": 2, "x": 1, "y": 3},
         ]
-[O        json_list_input = Rectangle.to_json_string(list_input)
+        json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(json_list_input)
         self.assertEqual(list_input, list_output)
 
@@ -546,4 +548,3 @@ class TestBase_load_from_file_csv(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

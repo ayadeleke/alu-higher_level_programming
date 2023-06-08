@@ -1,7 +1,8 @@
-
 #!/usr/bin/python3
-
+# test_square.py
+# refer to models
 """Defines unittests for models/square.py.
+
 Unittest classes:
     TestSquare_instantiation - line 24
     TestSquare_size - line 88
@@ -314,7 +315,7 @@ class TestSquare_order_of_initialization(unittest.TestCase):
             Square("invalid size", 1, "invalid y")
 
     def test_x_before_y(self):
-[O        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square(1, "invalid x", "invalid y")
 
 
@@ -345,6 +346,7 @@ class TestSquare_stdout(unittest.TestCase):
     @staticmethod
     def capture_stdout(sq, method):
         """Captures and returns text printed to stdout.
+
         Args:
             sq (Square): The Square ot print to stdout.
             method (str): The method to run on sq.
