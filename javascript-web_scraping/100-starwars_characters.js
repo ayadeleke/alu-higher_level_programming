@@ -3,7 +3,7 @@
 const request = require('request');
 
 function printMovieCharacters (movieId) {
-  const url = `https://swapi.dev/api/films/${movieId}/`;
+  const url = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
   
   request.get(url, (error, response, body) => {
     if (error) {
