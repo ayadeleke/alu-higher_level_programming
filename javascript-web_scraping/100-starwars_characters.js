@@ -1,34 +1,22 @@
 #!/usr/bin/node
-
 const request = require('request');
+const args = process.argv;
 
-function printMovieCharacters (movieId) {
-  const url = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
-  
-  request.get(url, (error, response, body) => {
-    if (error) {
-      console.error('Error:', error);
-    } else if (response.statusCode !== 200) {
-      console.error('Unexpected response:', response.statusCode);
-    } else {
-      const movie = JSON.parse(body);
-      console.log(`Characters of ${movie.title}:`);
-      movie.characters.forEach((characterUrl) => {
-        request.get(characterUrl, (charError, charResponse, charBody) => {
-          if (charError) {
-            console.error('Error:', charError);
-          } else if (charResponse.statusCode !== 200) {
-            console.error('Unexpected response:', charResponse.statusCode);
-          } else {
-            const character = JSON.parse(charBody);
-            console.log(character.name);
-          }
-        });
+request(`https://swapi-api.hbtn.io/api/films/${args[2]}`, function (error, response, body) {
+  if (error) {
+    console.log(error);
+  } else {
+    const data = JSON.parse(body);
+    const charEnd = data.characters;
+    const loopTime = charEnd.length;
+    for (let i = 0; i < loopTime; i++) {
+      request(charEnd[i], function (error, response, body) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log(JSON.parse(body).name);
+        }
       });
     }
-  });
-}
-
-const movieId = 3;
-printMovieCharacters(movieId);
-
+  }
+});
