@@ -1,4 +1,4 @@
 #!/usr/bin/node
 (() => {
-  document.querySelector('header').style.color = '#FF5733';
+  document.querySelector('header').style.color = '#FF0000';
 })();
